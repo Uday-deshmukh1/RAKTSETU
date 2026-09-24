@@ -59,13 +59,6 @@ npm install
 npm run dev
 ```
 
-## Team
-
-| Person | Scope |
-|--------|--------|
-| Devanshu | Frontend |
-| Uday | Backend, DB, auth, QR, deploy |
-| Ayush | Prediction, reminders, chatbot |
 
 ## Product boundary
 
