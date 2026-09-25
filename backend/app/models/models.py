@@ -73,6 +73,8 @@ class Registration(Base):
 
     drive = relationship("Drive", back_populates="registrations")
     donor = relationship("Donor", back_populates="registrations")
+    signals = relationship("Signal", back_populates="registration", foreign_keys="[Signal.registration_id]")
+    checkin = relationship("CheckIn", back_populates="registration", uselist=False)
 
 
 class Signal(Base):
@@ -104,7 +106,7 @@ class CheckIn(Base):
     checked_in_by = Column(Integer, ForeignKey("users.id"), nullable=True)
 
     drive = relationship("Drive", back_populates="checkins")
-    registration = relationship("Registration")
+    registration = relationship("Registration", back_populates="checkin")
 
 
 class ReminderLog(Base):
